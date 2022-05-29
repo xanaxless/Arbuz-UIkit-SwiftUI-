@@ -25,7 +25,7 @@ class CustomCellCollectionViewCell: UICollectionViewCell {
     }
     
     func  setupView(product: Product) {
-        let pr2 = ProductFirstView(product: Constants.watermellon)
+        let pr2 = ProductFirstView(product: product)
         let childView2 = UIHostingController(rootView: pr2)
         childView2.view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(childView2.view)

@@ -32,7 +32,7 @@ struct ArbuzChoosingView: View {
         HStack(spacing: 10){
             OneCase(color: .green , situation: "Спелый")
             OneCase(color: .yellow, situation: "Неспелый")
-            OneCase(color: .blue, situation: "выбран")
+            OneCase(color: .blue, situation: "Выбран")
         }
     }
     
@@ -103,7 +103,7 @@ struct ArbuzChoosingView: View {
             }
         }
         .frame(width: 100, height: 130, alignment: .center)
-        .background(.secondary)
+        .background(.gray.opacity(0.5))
         .cornerRadius(20)
         
     }

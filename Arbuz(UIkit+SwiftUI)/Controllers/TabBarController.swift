@@ -22,13 +22,8 @@ class TabBarController: UITabBarController ,UITabBarControllerDelegate{
          super.viewWillAppear(animated)
          tabBar.barTintColor = .white
          tabBar.isTranslucent = false
-         tabBar.unselectedItemTintColor = .black
-         navigationController?.navigationItem.largeTitleDisplayMode = .never
-         navigationController?.navigationBar.prefersLargeTitles = false
+         tabBar.unselectedItemTintColor = .black         
          
-            let unselectedColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
-
-         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: unselectedColor], for: .normal)
          
          // Create Tab one
          let tabOne = ViewController()
@@ -45,7 +40,7 @@ class TabBarController: UITabBarController ,UITabBarControllerDelegate{
          tabTwo.tabBarItem = tabTwoBarItem2
          
          // Create Tab three
-         let tabThree = SearchViewController()
+         let tabThree = CartViewController()
          let tabTwoBarItem3 = UITabBarItem(title: "", image: UIImage(systemName: "cart"), selectedImage: UIImage(systemName: "cart"))
          
          
@@ -72,6 +67,10 @@ class TabBarController: UITabBarController ,UITabBarControllerDelegate{
      
      // UITabBarControllerDelegate method
      func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-         
+         tabBar.barTintColor = .white
+         tabBar.isTranslucent = false
+         tabBar.unselectedItemTintColor = .black
+         navigationController?.navigationItem.largeTitleDisplayMode = .never
+         navigationController?.navigationBar.prefersLargeTitles = false
      }
  }

@@ -18,9 +18,10 @@
 		CB2B5CE4284209CB00CB72BF /* ProductFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2B5CE3284209CB00CB72BF /* ProductFirstView.swift */; };
 		CB2B5CE628420A0900CB72BF /* Product .swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2B5CE528420A0900CB72BF /* Product .swift */; };
 		CB2B5CE928421C8900CB72BF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2B5CE828421C8900CB72BF /* DetailView.swift */; };
-		CB5187552843617400D5C0AB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5187542843617400D5C0AB /* DetailViewController.swift */; };
 		CB51875728436B0E00D5C0AB /* ArbuzChoosingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB51875628436B0E00D5C0AB /* ArbuzChoosingView.swift */; };
 		CB51875B28436EDD00D5C0AB /* FinalStageofArbuzOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB51875A28436EDD00D5C0AB /* FinalStageofArbuzOrderView.swift */; };
+		CB5EFA5628438AF800A7A28C /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = CB5EFA5528438AF800A7A28C /* iPhoneNumberField */; };
+		CB5EFA5928438D8000A7A28C /* iTextField in Frameworks */ = {isa = PBXBuildFile; productRef = CB5EFA5828438D8000A7A28C /* iTextField */; };
 		CBFD32F12842525D00FE6422 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFD32F02842525D00FE6422 /* TabBarController.swift */; };
 		CBFD32F32842535100FE6422 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFD32F22842535100FE6422 /* CartViewController.swift */; };
 		CBFD32F5284254B800FE6422 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFD32F4284254B800FE6422 /* SearchViewController.swift */; };
@@ -43,7 +44,6 @@
 		CB2B5CE3284209CB00CB72BF /* ProductFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFirstView.swift; sourceTree = "<group>"; };
 		CB2B5CE528420A0900CB72BF /* Product .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product .swift"; sourceTree = "<group>"; };
 		CB2B5CE828421C8900CB72BF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		CB5187542843617400D5C0AB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CB51875628436B0E00D5C0AB /* ArbuzChoosingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArbuzChoosingView.swift; sourceTree = "<group>"; };
 		CB51875A28436EDD00D5C0AB /* FinalStageofArbuzOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStageofArbuzOrderView.swift; sourceTree = "<group>"; };
 		CBFD32F02842525D00FE6422 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -59,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB5EFA5928438D8000A7A28C /* iTextField in Frameworks */,
+				CB5EFA5628438AF800A7A28C /* iPhoneNumberField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +134,6 @@
 			children = (
 				CBFD32F02842525D00FE6422 /* TabBarController.swift */,
 				CB2B5CCD2841FE3500CB72BF /* ViewController.swift */,
-				CB5187542843617400D5C0AB /* DetailViewController.swift */,
 				CBFD32F22842535100FE6422 /* CartViewController.swift */,
 				CBFD32F4284254B800FE6422 /* SearchViewController.swift */,
 				CBFD32F62842561300FE6422 /* HeartViewController.swift */,
@@ -157,6 +158,10 @@
 			dependencies = (
 			);
 			name = "Arbuz(UIkit+SwiftUI)";
+			packageProductDependencies = (
+				CB5EFA5528438AF800A7A28C /* iPhoneNumberField */,
+				CB5EFA5828438D8000A7A28C /* iTextField */,
+			);
 			productName = "Arbuz(UIkit+SwiftUI)";
 			productReference = CB2B5CC62841FE3500CB72BF /* Arbuz(UIkit+SwiftUI).app */;
 			productType = "com.apple.product-type.application";
@@ -185,6 +190,10 @@
 				Base,
 			);
 			mainGroup = CB2B5CBD2841FE3500CB72BF;
+			packageReferences = (
+				CB5EFA5428438AF800A7A28C /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+				CB5EFA5728438D8000A7A28C /* XCRemoteSwiftPackageReference "iTextField" */,
+			);
 			productRefGroup = CB2B5CC72841FE3500CB72BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -219,7 +228,6 @@
 				CB2B5CE4284209CB00CB72BF /* ProductFirstView.swift in Sources */,
 				CB2B5CCE2841FE3500CB72BF /* ViewController.swift in Sources */,
 				CB2B5CE928421C8900CB72BF /* DetailView.swift in Sources */,
-				CB5187552843617400D5C0AB /* DetailViewController.swift in Sources */,
 				CB2B5CCA2841FE3500CB72BF /* AppDelegate.swift in Sources */,
 				CB51875B28436EDD00D5C0AB /* FinalStageofArbuzOrderView.swift in Sources */,
 				CB0CD6DE2842A5510032F9B0 /* Arbuz.swift in Sources */,
@@ -438,6 +446,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB5EFA5428438AF800A7A28C /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.1;
+			};
+		};
+		CB5EFA5728438D8000A7A28C /* XCRemoteSwiftPackageReference "iTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benjaminsage/iTextField";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB5EFA5528438AF800A7A28C /* iPhoneNumberField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB5EFA5428438AF800A7A28C /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
+			productName = iPhoneNumberField;
+		};
+		CB5EFA5828438D8000A7A28C /* iTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB5EFA5728438D8000A7A28C /* XCRemoteSwiftPackageReference "iTextField" */;
+			productName = iTextField;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CB2B5CBE2841FE3500CB72BF /* Project object */;
 }

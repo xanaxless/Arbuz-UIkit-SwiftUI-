@@ -24,7 +24,7 @@ class ViewController: UIViewController{
         collectionView?.delegate = self
         collectionView?.dataSource = self
         view.addSubview(collectionView ?? UIView())
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
         
     }
     
@@ -45,12 +45,16 @@ extension ViewController : UICollectionViewDelegate{
 
 extension ViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 9
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! CustomCellCollectionViewCell
-        myCell.setupView(product: Constants.watermellon)
+        if(indexPath.row % 2 == 0 ){
+            myCell.setupView(product: Constants.watermellon)
+        }else{
+            myCell.setupView(product: Constants.apple)
+        }
         myCell.backgroundColor = UIColor.blue
         return myCell
     }
