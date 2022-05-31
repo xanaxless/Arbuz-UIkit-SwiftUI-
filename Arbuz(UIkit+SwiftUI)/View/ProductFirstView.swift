@@ -14,6 +14,7 @@ struct ProductFirstView: View {
     @State var showPopOverWindow: Bool = false
     @State var isButtonChanged: Bool = false
     @State var amountofChosenProduct:Int  = 0
+    
     // MARK: - Body
     var body: some View {
         VStack(alignment: .center, spacing: 5) {

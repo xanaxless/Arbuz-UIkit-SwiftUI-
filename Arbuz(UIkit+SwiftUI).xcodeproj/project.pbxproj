@@ -134,8 +134,8 @@
 			children = (
 				CBFD32F02842525D00FE6422 /* TabBarController.swift */,
 				CB2B5CCD2841FE3500CB72BF /* ViewController.swift */,
-				CBFD32F22842535100FE6422 /* CartViewController.swift */,
 				CBFD32F4284254B800FE6422 /* SearchViewController.swift */,
+				CBFD32F22842535100FE6422 /* CartViewController.swift */,
 				CBFD32F62842561300FE6422 /* HeartViewController.swift */,
 				CBFD32F82842566C00FE6422 /* PineappleViewController.swift */,
 			);

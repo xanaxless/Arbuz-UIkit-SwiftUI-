@@ -34,33 +34,33 @@ class TabBarController: UITabBarController ,UITabBarControllerDelegate{
          
          // Create Tab two
          let tabTwo = SearchViewController()
-         let tabTwoBarItem2 = UITabBarItem(title: "", image: UIImage(systemName: "text.magnifyingglass"), selectedImage: UIImage(systemName: "text.magnifyingglass"))
+         let tabTwoBarItem = UITabBarItem(title: "", image: UIImage(systemName: "text.magnifyingglass"), selectedImage: UIImage(systemName: "text.magnifyingglass"))
          
          
-         tabTwo.tabBarItem = tabTwoBarItem2
+         tabTwo.tabBarItem = tabTwoBarItem
          
          // Create Tab three
          let tabThree = CartViewController()
-         let tabTwoBarItem3 = UITabBarItem(title: "", image: UIImage(systemName: "cart"), selectedImage: UIImage(systemName: "cart"))
+         let tabThreeBarItem = UITabBarItem(title: "", image: UIImage(systemName: "cart"), selectedImage: UIImage(systemName: "cart"))
          
          
-         tabThree.tabBarItem = tabTwoBarItem3
+         tabThree.tabBarItem = tabThreeBarItem
          
          
          // Create Tab four
          let tabFour = HeartViewController()
-         let tabTwoBarItem4 = UITabBarItem(title: "", image: UIImage(systemName: "suit.heart"), selectedImage: UIImage(systemName: "suit.heart"))
+         let tabFourBarItem = UITabBarItem(title: "", image: UIImage(systemName: "suit.heart"), selectedImage: UIImage(systemName: "suit.heart"))
          
          
-         tabFour.tabBarItem = tabTwoBarItem4
+         tabFour.tabBarItem = tabFourBarItem
          
          
          // Create Tab five
          let tabFive = PineappleViewController()
-         let tabTwoBarItem5 = UITabBarItem(title: "", image: UIImage(systemName: "brain.head.profile"), selectedImage: UIImage(systemName: "brain.head.profile"))
+         let tabFiveBarItem = UITabBarItem(title: "", image: UIImage(systemName: "brain.head.profile"), selectedImage: UIImage(systemName: "brain.head.profile"))
          
          
-         tabFive.tabBarItem = tabTwoBarItem5
+         tabFive.tabBarItem = tabFiveBarItem
          
          self.viewControllers = [tabOne, tabTwo, tabThree, tabFour, tabFive]
      }
