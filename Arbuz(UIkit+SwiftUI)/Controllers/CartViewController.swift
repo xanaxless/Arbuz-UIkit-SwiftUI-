@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class CartViewController: UIViewController {
 
@@ -13,9 +14,16 @@ class CartViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         tabBarController?.tabBar.barTintColor = .white
-        // Do any additional setup after loading the view.
+        setupView()
     }
     
+    func  setupView() {
+        let pr = CartView()
+        let childView = UIHostingController(rootView: pr)
+        childView.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(childView.view)
+        childView.view.frame = view.frame
+    }
 
     /*
     // MARK: - Navigation

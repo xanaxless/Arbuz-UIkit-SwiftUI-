@@ -11,8 +11,10 @@ struct DetailedProductView: View {
     // MARK: - Properties
     @Environment(\.presentationMode) var presentation
     @State var product: Product
-    @State var isButtonChanged: Bool = false
-    @State var amountofChosenProduct: Int = 0
+    @Binding var amountofChosenProduct: Int
+    
+    // MARK: - CartSingleton
+    var cartViewModel = CartViewModel.cartObj
     
     // MARK: - Body
     var body: some View {
@@ -90,16 +92,14 @@ struct DetailedProductView: View {
     // MARK: - BottomButton
     @ViewBuilder func BottomButton() -> some View{
         HStack(spacing: 10){
-            if isButtonChanged == true && amountofChosenProduct != 0 {
+            if  amountofChosenProduct != 0 {
                 Button {
                     withAnimation(.easeOut(duration: 0.5)) {
                         if(amountofChosenProduct != 0) {
                             amountofChosenProduct-=1
-                            if(amountofChosenProduct == 0) {
-                                isButtonChanged = false
-                            }
                         }
                     }
+                    cartViewModel.syncronizeProductWithCart(product: product, amount: amountofChosenProduct)
                 } label: {
                     Image(systemName: "minus")
                         .foregroundColor(.white)
@@ -112,7 +112,7 @@ struct DetailedProductView: View {
             Text("\(product.price)₸")
                 .foregroundColor(.white)
                 .font(.title3)
-            if isButtonChanged == true && amountofChosenProduct != 0 {
+            if amountofChosenProduct != 0 {
                 Text("x \(amountofChosenProduct)")
                     .foregroundColor(.white)
                     .font(.title3)
@@ -120,27 +120,27 @@ struct DetailedProductView: View {
             }
             Button {
                 withAnimation(.easeOut(duration: 0.5)) {
-                    isButtonChanged = true
                     amountofChosenProduct+=1
                 }
+                cartViewModel.syncronizeProductWithCart(product: product, amount: amountofChosenProduct)
             } label: {
                 Image(systemName: "plus")
                     .foregroundColor(.white)
                     .font(.title2)
             }
-            if isButtonChanged == false && amountofChosenProduct == 0{
+            if amountofChosenProduct == 0{
                 Spacer()
             }
         }
         .frame(width: .infinity, height: 70)
         .padding(.horizontal)
-        .background(.green)
+        .background((amountofChosenProduct==0) ? .gray : .green)
         .onTapGesture {
-            if isButtonChanged == false && amountofChosenProduct == 0{
+            if amountofChosenProduct == 0{
                 withAnimation(.easeOut(duration: 0.5)) {
-                    isButtonChanged = true
                     amountofChosenProduct = 1
                 }
+                cartViewModel.syncronizeProductWithCart(product: product, amount: amountofChosenProduct)
             }
         }
     }
@@ -164,9 +164,9 @@ struct DetailedProductView: View {
 
 
 
-// MARK: - Preview
-struct DetailedProductView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailedProductView(product: Constants.watermellon)
-    }
-}
+//// MARK: - Preview
+//struct DetailedProductView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DetailedProductView(product: Constants.watermellon,amountofChosenProduct: .)
+//    }
+//}

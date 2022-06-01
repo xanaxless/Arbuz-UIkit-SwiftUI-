@@ -12,4 +12,13 @@ struct Product: Identifiable {
     var price: Int
     var description: String
     var fullDescription: String
+    
+    // comparing two product to be same
+    func sameProduct(product: Product) -> Bool {
+        if(self.name == product.name){
+            return true
+            // in our case only name check will be enought
+        }
+        return false
+    }
 }

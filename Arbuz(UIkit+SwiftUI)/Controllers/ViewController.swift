@@ -25,7 +25,12 @@ class ViewController: UIViewController{
         collectionView?.dataSource = self
         view.addSubview(collectionView ?? UIView())
         navigationController?.navigationBar.isHidden = false
-        
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
     }
     
     private func setupCollectionView(){
@@ -45,7 +50,7 @@ extension ViewController : UICollectionViewDelegate{
 
 extension ViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

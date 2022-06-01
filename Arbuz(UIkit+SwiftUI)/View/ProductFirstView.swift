@@ -12,9 +12,12 @@ struct ProductFirstView: View {
     // MARK: - Properties
     @State var product: Product
     @State var showPopOverWindow: Bool = false
-    @State var isButtonChanged: Bool = false
-    @State var amountofChosenProduct:Int  = 0
+    @State var amountofChosenProduct:Int = 0
     
+    // MARK: - CartSingleton
+    var cartViewModel = CartViewModel.cartObj
+    
+
     // MARK: - Body
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
@@ -41,7 +44,7 @@ struct ProductFirstView: View {
                 }
             }.popover(isPresented: $showPopOverWindow ,
                       arrowEdge: Edge.trailing) {
-                DetailedProductView(product:product)
+                DetailedProductView(product:product,amountofChosenProduct: $amountofChosenProduct)
             }
             buyButton()
                 .frame(height: 33)
@@ -51,16 +54,14 @@ struct ProductFirstView: View {
     
     @ViewBuilder func buyButton() -> some View {
         HStack(spacing: 2){
-            if isButtonChanged == true && amountofChosenProduct != 0 {
+            if amountofChosenProduct != 0 {
                 Button {
                     withAnimation(.easeOut(duration: 0.5)) {
                         if(amountofChosenProduct != 0) {
                             amountofChosenProduct-=1
-                            if(amountofChosenProduct == 0) {
-                                isButtonChanged = false
-                            }
                         }
                     }
+                    cartViewModel.syncronizeProductWithCart(product: product, amount: amountofChosenProduct)
                 } label: {
                     Image(systemName: "minus")
                         .foregroundColor(.white)
@@ -70,7 +71,7 @@ struct ProductFirstView: View {
             }else{
                 Spacer()
             }
-            if isButtonChanged == true && amountofChosenProduct != 0 {
+            if  amountofChosenProduct != 0 {
                 Text("x \(amountofChosenProduct)")
                     .foregroundColor(.white)
                     .font(.body)
@@ -82,30 +83,29 @@ struct ProductFirstView: View {
             }
             Button {
                 withAnimation(.easeOut(duration: 0.5)) {
-                    isButtonChanged = true
                     amountofChosenProduct+=1
                 }
+                cartViewModel.syncronizeProductWithCart(product: product, amount: amountofChosenProduct)
             } label: {
                 Image(systemName: "plus")
                     .foregroundColor(.white)
                     .padding(.trailing, 5)
             }
-            if isButtonChanged == false && amountofChosenProduct == 0{
+            if amountofChosenProduct == 0{
                 Spacer()
             }
         }
         .padding(.vertical, 10)
         .ignoresSafeArea()
-        .background(.green)
+        .background((amountofChosenProduct==0) ? .gray : .green)
         .onTapGesture {
-            if isButtonChanged == false && amountofChosenProduct == 0{
+            if amountofChosenProduct == 0{
                 withAnimation(.easeOut(duration: 0.5)) {
-                    isButtonChanged = true
                     amountofChosenProduct = 1
+                    cartViewModel.syncronizeProductWithCart(product: product, amount: amountofChosenProduct)
                 }
             }
         }
-        
     }
     
     

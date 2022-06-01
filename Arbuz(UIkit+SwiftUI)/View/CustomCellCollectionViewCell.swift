@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 class CustomCellCollectionViewCell: UICollectionViewCell {
     
+    
     var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical

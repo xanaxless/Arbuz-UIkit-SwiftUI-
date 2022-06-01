@@ -11,11 +11,16 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        tabBarController?.tabBar.barTintColor = .yellow
+        view.backgroundColor = .yellow
+        tabBarController?.tabBar.barTintColor = .white
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
+    }
 
     /*
     // MARK: - Navigation

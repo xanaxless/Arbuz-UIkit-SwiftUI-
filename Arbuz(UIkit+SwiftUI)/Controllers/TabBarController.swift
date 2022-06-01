@@ -8,7 +8,7 @@
 import UIKit
 
 class TabBarController: UITabBarController ,UITabBarControllerDelegate{
-
+    // singleton due to the fact the we have only one cart in whole app
     
      override func viewDidLoad() {
          super.viewDidLoad()
@@ -16,13 +16,19 @@ class TabBarController: UITabBarController ,UITabBarControllerDelegate{
          //Assign self for delegate for that ViewController can respond to UITabBarControllerDelegate methods
          self.delegate = self
          
+         object_setClass(self.tabBar, CustomTabbar.self)
+         (self.tabBar as! CustomTabbar).setup()
      }
      
      override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
          tabBar.barTintColor = .white
          tabBar.isTranslucent = false
-         tabBar.unselectedItemTintColor = .black         
+         tabBar.barStyle = .default
+         tabBar.unselectedItemTintColor = .black
+             tabBar.selectedItem?.badgeColor = .green
+         
+         
          
          
          // Create Tab one
@@ -63,14 +69,30 @@ class TabBarController: UITabBarController ,UITabBarControllerDelegate{
          tabFive.tabBarItem = tabFiveBarItem
          
          self.viewControllers = [tabOne, tabTwo, tabThree, tabFour, tabFive]
+        
      }
      
      // UITabBarControllerDelegate method
      func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-         tabBar.barTintColor = .white
-         tabBar.isTranslucent = false
-         tabBar.unselectedItemTintColor = .black
          navigationController?.navigationItem.largeTitleDisplayMode = .never
          navigationController?.navigationBar.prefersLargeTitles = false
      }
- }
+    
+    //Delegate methods
+       func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+           print("Should select viewController: \(viewController.title ?? "") ?")
+           return true;
+       }
+    
+}
+
+class CustomTabbar: UITabBar{
+    func setup() {
+        backgroundColor = .white
+        selectedItem?.badgeColor = .green
+        unselectedItemTintColor = .black
+        barTintColor = .white
+    }
+    
+    
+}

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		CB0CD6DC2842A3E70032F9B0 /* ArbuzChoosingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0CD6DB2842A3E70032F9B0 /* ArbuzChoosingViewModel.swift */; };
 		CB0CD6DE2842A5510032F9B0 /* Arbuz.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0CD6DD2842A5510032F9B0 /* Arbuz.swift */; };
+		CB1DB0062846B1E500A0A84F /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1DB0052846B1E500A0A84F /* Extention.swift */; };
+		CB1DB0082846BB4D00A0A84F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1DB0072846BB4D00A0A84F /* CartViewModel.swift */; };
+		CB1DB00A2846BCD600A0A84F /* ItemInCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1DB0092846BCD600A0A84F /* ItemInCart.swift */; };
+		CB1DB00C2846CEA500A0A84F /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1DB00B2846CEA500A0A84F /* CartView.swift */; };
+		CB1DB00E2846E0FD00A0A84F /* OneItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1DB00D2846E0FD00A0A84F /* OneItemCell.swift */; };
 		CB2B5CCA2841FE3500CB72BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2B5CC92841FE3500CB72BF /* AppDelegate.swift */; };
 		CB2B5CCC2841FE3500CB72BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2B5CCB2841FE3500CB72BF /* SceneDelegate.swift */; };
 		CB2B5CCE2841FE3500CB72BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2B5CCD2841FE3500CB72BF /* ViewController.swift */; };
@@ -33,6 +38,11 @@
 /* Begin PBXFileReference section */
 		CB0CD6DB2842A3E70032F9B0 /* ArbuzChoosingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArbuzChoosingViewModel.swift; sourceTree = "<group>"; };
 		CB0CD6DD2842A5510032F9B0 /* Arbuz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arbuz.swift; sourceTree = "<group>"; };
+		CB1DB0052846B1E500A0A84F /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
+		CB1DB0072846BB4D00A0A84F /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		CB1DB0092846BCD600A0A84F /* ItemInCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInCart.swift; sourceTree = "<group>"; };
+		CB1DB00B2846CEA500A0A84F /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		CB1DB00D2846E0FD00A0A84F /* OneItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneItemCell.swift; sourceTree = "<group>"; };
 		CB2B5CC62841FE3500CB72BF /* Arbuz(UIkit+SwiftUI).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arbuz(UIkit+SwiftUI).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2B5CC92841FE3500CB72BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB2B5CCB2841FE3500CB72BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +99,7 @@
 				CB2B5CC92841FE3500CB72BF /* AppDelegate.swift */,
 				CB2B5CCB2841FE3500CB72BF /* SceneDelegate.swift */,
 				CBFD32FA28426AB600FE6422 /* Constants .swift */,
+				CB1DB0052846B1E500A0A84F /* Extention.swift */,
 				CB2B5CE02842050400CB72BF /* Controllers */,
 				CB2B5CDE284201A000CB72BF /* Model */,
 				CB2B5CDD2842018600CB72BF /* View */,
@@ -108,6 +119,8 @@
 				CB2B5CE3284209CB00CB72BF /* ProductFirstView.swift */,
 				CB51875628436B0E00D5C0AB /* ArbuzChoosingView.swift */,
 				CB51875A28436EDD00D5C0AB /* FinalStageofArbuzOrderView.swift */,
+				CB1DB00B2846CEA500A0A84F /* CartView.swift */,
+				CB1DB00D2846E0FD00A0A84F /* OneItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,6 +130,7 @@
 			children = (
 				CB2B5CE528420A0900CB72BF /* Product .swift */,
 				CB0CD6DD2842A5510032F9B0 /* Arbuz.swift */,
+				CB1DB0092846BCD600A0A84F /* ItemInCart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				CB0CD6DB2842A3E70032F9B0 /* ArbuzChoosingViewModel.swift */,
+				CB1DB0072846BB4D00A0A84F /* CartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -223,8 +238,11 @@
 				CBFD32F5284254B800FE6422 /* SearchViewController.swift in Sources */,
 				CBFD32F92842566C00FE6422 /* PineappleViewController.swift in Sources */,
 				CB2B5CE628420A0900CB72BF /* Product .swift in Sources */,
+				CB1DB00A2846BCD600A0A84F /* ItemInCart.swift in Sources */,
+				CB1DB0082846BB4D00A0A84F /* CartViewModel.swift in Sources */,
 				CB0CD6DC2842A3E70032F9B0 /* ArbuzChoosingViewModel.swift in Sources */,
 				CBFD32F12842525D00FE6422 /* TabBarController.swift in Sources */,
+				CB1DB00E2846E0FD00A0A84F /* OneItemCell.swift in Sources */,
 				CB2B5CE4284209CB00CB72BF /* ProductFirstView.swift in Sources */,
 				CB2B5CCE2841FE3500CB72BF /* ViewController.swift in Sources */,
 				CB2B5CE928421C8900CB72BF /* DetailView.swift in Sources */,
@@ -233,9 +251,11 @@
 				CB0CD6DE2842A5510032F9B0 /* Arbuz.swift in Sources */,
 				CB2B5CCC2841FE3500CB72BF /* SceneDelegate.swift in Sources */,
 				CBFD32F32842535100FE6422 /* CartViewController.swift in Sources */,
+				CB1DB00C2846CEA500A0A84F /* CartView.swift in Sources */,
 				CBFD32FB28426AB600FE6422 /* Constants .swift in Sources */,
 				CB51875728436B0E00D5C0AB /* ArbuzChoosingView.swift in Sources */,
 				CB2B5CE22842056500CB72BF /* CustomCellCollectionViewCell.swift in Sources */,
+				CB1DB0062846B1E500A0A84F /* Extention.swift in Sources */,
 				CBFD32F72842561300FE6422 /* HeartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
